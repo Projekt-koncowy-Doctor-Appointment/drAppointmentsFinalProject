@@ -1,6 +1,7 @@
 package com.drAppointments.Final.Project.service;
 
 import com.drAppointments.Final.Project.model.dao.DoctorDao;
+import com.drAppointments.Final.Project.repository.AppointmentRepository;
 import com.drAppointments.Final.Project.repository.DoctorRepository;
 import com.drAppointments.Final.Project.repository.PatientRepository;
 import org.modelmapper.ModelMapper;
@@ -17,6 +18,9 @@ public class DoctorService {
 
     @Autowired
     private DoctorRepository doctorRepository;
+
+    @Autowired
+    private AppointmentRepository appointmentRepository;
 
     private ModelMapper modelMapper;
 
