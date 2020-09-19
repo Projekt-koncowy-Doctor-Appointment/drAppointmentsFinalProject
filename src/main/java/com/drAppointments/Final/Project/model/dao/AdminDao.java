@@ -1,9 +1,9 @@
 package com.drAppointments.Final.Project.model.dao;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.drAppointments.Final.Project.model.Role;
+
+import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 public class AdminDao {
@@ -16,6 +16,8 @@ public class AdminDao {
     String surname;
     String login;
     String password;
+
+    private Role role;
 
     public Long getId() {
         return id;
@@ -56,4 +58,5 @@ public class AdminDao {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

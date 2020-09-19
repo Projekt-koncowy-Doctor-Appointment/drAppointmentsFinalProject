@@ -4,6 +4,7 @@ package com.drAppointments.Final.Project.service;
 //import com.sda.mvc.model.dto.UserDto;
 //import com.sda.mvc.model.dto.UserSecDto;
 
+import com.drAppointments.Final.Project.model.Role;
 import com.drAppointments.Final.Project.model.dao.AdminDao;
 import com.drAppointments.Final.Project.model.dao.DoctorDao;
 import com.drAppointments.Final.Project.model.dao.PatientDao;
@@ -15,6 +16,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.FetchType;
+import javax.persistence.ManyToMany;
+import java.util.Collection;
 import java.util.Optional;
 
 @Service
@@ -28,14 +32,18 @@ public class UserService {
 
     private PasswordEncoder passwordEncoder;
 
+    @ManyToMany(fetch = FetchType.EAGER)
+    private Collection<Role> roles;
+
     public UserService(AdminRepository adminRepository,
                        DoctorRepository doctorRepository, PatientRepository patientRepository,
-                       ModelMapper modelMapper, PasswordEncoder passwordEncoder) {
+                       ModelMapper modelMapper, PasswordEncoder passwordEncoder, Collection<Role> roles) {
         this.adminRepository = adminRepository;
         this.doctorRepository = doctorRepository;
         this.patientRepository = patientRepository;
         this.modelMapper = modelMapper;
         this.passwordEncoder = passwordEncoder;
+        this.roles = roles;
     }
 
     public String getNameAndSurnameLoggedAdmin() {
