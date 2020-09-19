@@ -17,6 +17,4 @@ public interface AppointmentRepository extends JpaRepository<AppointmentDao, Lon
 
     List<AppointmentDao> getAllByDateAfter(LocalDate date);
 
-    List<AppointmentDao> getAllByDate_Day(short day);
-
 }
