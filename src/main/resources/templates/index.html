@@ -1,27 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:border-radius="http://www.w3.org/1999/xhtml"
+      xmlns:padding="http://www.w3.org/1999/xhtml" xmlns:margin="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Witaj na mojej stronie</title>
+    <title>Przychodnia</title>
+
     <link type="text/css" rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+    img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    </style>
 </head>
 <body>
+<h1>
+    <div class="topnav">
+        <a class="active" href="/addadmin">Admin</a>
+        <a class="active" href="/adddoctor">Rejestracja nowego lekarza</a>
+        <a class="active" href="/addpatient">Rejestracja nowego pacjenta</a>
+        <div class="login-container">
+            <form action="/action_page.php">
+                <input type="text" placeholder="Username" name="username">
+                <input type="text" placeholder="Password" name="psw">
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
 
-<h1>Dr Appointments</h1>
-<!--<h2 th:text="${user}"></h2>-->
+    <img th:src="@{images/clinica.jpg}" class="img-fluid" alt="Logo przychodni" style="width:25%;">
 
-<!--<form action="/users">-->
-<!--    <button class="btn-primary" style="margin: 5px; padding: 5px; border-radius: 5px 5px 5px 5px;" type="submit">-->
-<!--        Display users-->
-<!--    </button>-->
-<!--</form>-->
+</h1>
 
-<!--<form action="/adduser">-->
-<!--    <button class="btn-success" style="margin: 5px; padding: 5px; border-radius: 5px 5px 5px 5px;" type="submit">-->
-<!--        Add user-->
-<!--    </button>-->
-<!--</form>-->
+<h3 class="display-1">
+    Przychodnia
+    <small class="text-muted">"Zawsze nogami do przodu"</small></h3>
+
+
 
 </body>
 </html>
